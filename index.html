@@ -27,24 +27,30 @@
     document.getElementById("loginForm").addEventListener("submit", function(e) {
       e.preventDefault();
 
-      let username = document.getElementById("loginUsername").value;
-      let password = document.getElementById("loginPassword").value;
+      let username = document.getElementById("loginUsername").value.trim();
+      let password = document.getElementById("loginPassword").value.trim();
+
+      if (!username || !password) {
+        alert("⚠ Please enter both username and password.");
+        return;
+      }
 
       let storedUser = localStorage.getItem(username);
 
-      if(storedUser) {
+      if (storedUser) {
         let userData = JSON.parse(storedUser);
 
-        if(userData.password === password) {
-          window.location.href = "dashboard.html"; 
+        if (userData.password === password) {
+          localStorage.setItem("currentUser", username);
+
+          window.location.href = "dashboard.html";
         } else {
-          alert("Invalid password! Try again.");
+          alert("❌ Invalid password! Try again.");
         }
       } else {
-        alert("User not found! Please signup.");
+        alert("❌ User not found! Please signup first.");
       }
     });
   </script>
 </body>
 </html>
-
