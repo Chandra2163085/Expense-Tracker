@@ -47,7 +47,7 @@ function addTransaction() {
   saveTransactions();
   displayTransactions();
 
-  // Reset form fields
+  
   document.getElementById("date").value = "";
   document.getElementById("desc").value = "";
   document.getElementById("amount").value = "";
@@ -55,14 +55,14 @@ function addTransaction() {
   document.getElementById("type").value = "income";
 }
 
-// ✅ Delete a transaction
+
 function deleteTransaction(id) {
   transactions = transactions.filter(t => t.id !== id);
   saveTransactions();
   displayTransactions();
 }
 
-// ✅ Display transactions & summary
+
 function displayTransactions() {
   let list = document.getElementById("transactions");
   list.innerHTML = "";
@@ -90,3 +90,4 @@ function displayTransactions() {
 }
 
 window.onload = displayTransactions;
+
