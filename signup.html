@@ -27,7 +27,7 @@
         <input type="tel" id="signupMobile" pattern="[0-9]{10}" required>
       </div>
       <button type="submit">Signup</button>
-      <p>Already have an account? <a href="login.html">Login</a></p>
+      <p>Already have an account? <a href="Index.html">Login</a></p>
     </form>
   </div>
 
@@ -52,9 +52,10 @@
 
         localStorage.setItem(username, JSON.stringify(userData));
         alert("Signup successful! Please login.");
-        window.location.href = "login.html";
+        window.location.href = "Index.html";
       }
     });
   </script>
 </body>
 </html>
+
