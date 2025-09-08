@@ -10,7 +10,10 @@
   <div class="container">
     <h1>Expense Tracker</h1>
 
-    <!-- Form Section -->
+    
+    <button id="logoutBtn" >Logout</button>
+
+    
     <div class="form">
       <input type="date" id="date">
       <input type="text" id="desc" placeholder="Description">
@@ -34,18 +37,26 @@
       <p id="error" class="error"></p>
     </div>
 
-    <!-- Summary Section -->
+
     <div class="summary">
       <p>Total Income: <span id="totalIncome">0</span></p>
       <p>Total Expense: <span id="totalExpense">0</span></p>
       <p>Net Balance: <span id="balance">0</span></p>
     </div>
 
-    <!-- Transactions Section -->
+  
     <h2>Transactions</h2>
     <ul id="transactions"></ul>
   </div>
 
   <script src="expense.js"></script>
+  <script>
+   
+    document.getElementById("logoutBtn").addEventListener("click", function() {
+      localStorage.removeItem("currentUser"); 
+      alert("You have logged out.");
+      window.location.href = "login.html"; 
+    });
+  </script>
 </body>
 </html>
